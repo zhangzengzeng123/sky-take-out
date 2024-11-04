@@ -79,14 +79,14 @@ public class EmployeeServiceImpl implements EmployeeService {
         employee.setPassword(DigestUtils.md5DigestAsHex(PasswordConstant.DEFAULT_PASSWORD.getBytes()));
         // 初始化状态
         employee.setStatus(StatusConstant.ENABLE);
-        // 初始化创建时间
-        employee.setCreateTime(LocalDateTime.now());
-        // 更新修改时间
-        employee.setUpdateTime(LocalDateTime.now());
-
-        //利用ThreadLoad 里面的get方法获取当前登录着的ID
-        employee.setCreateUser(BaseContext.getCurrentId());
-        employee.setUpdateUser(BaseContext.getCurrentId());
+//        // 初始化创建时间
+//        employee.setCreateTime(LocalDateTime.now());
+//        // 更新修改时间
+//        employee.setUpdateTime(LocalDateTime.now());
+//
+//        //利用ThreadLoad 里面的get方法获取当前登录着的ID
+//        employee.setCreateUser(BaseContext.getCurrentId());
+//        employee.setUpdateUser(BaseContext.getCurrentId());
 
         employeeMapper.save(employee);
 
@@ -148,10 +148,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 //                .build();
         employee.setPassword(employee.getPassword());
         employee.setStatus(employee.getStatus());
-        employee.setCreateUser(employee.getCreateUser());
-        employee.setUpdateTime(LocalDateTime.now());
-        employee.setCreateUser(employee.getCreateUser());
-        employee.setUpdateUser(BaseContext.getCurrentId());
+//        employee.setCreateUser(employee.getCreateUser());
+//        employee.setUpdateTime(LocalDateTime.now());
+//        employee.setCreateUser(employee.getCreateUser());
+//        employee.setUpdateUser(BaseContext.getCurrentId());
         employeeMapper.update(employee);
     }
 
